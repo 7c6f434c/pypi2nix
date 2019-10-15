@@ -20,7 +20,7 @@ class Archive:
             yield directory
 
     def unpack_archive(self, target_directory: str) -> None:
-        if self.path.endswith(".tar.gz"):
+        if self.path.endswith(".tar.gz") or self.path.endswith(".tgz"):
             with tarfile.open(self.path, "r:gz") as tar:
                 tar.extractall(path=target_directory)
         elif self.path.endswith(".zip") or self.path.endswith(".whl"):
