@@ -19,6 +19,7 @@ let
     inherit pkgs;
     inherit (pkgs) stdenv;
     python = pkgs.python3;
+    inherit (pkgs) qt5 libsForQt5;
   };
 
   commonBuildInputs = with pkgs; [ openssl libffi ];
